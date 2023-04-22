@@ -20,8 +20,3 @@ def parse_nb(path):
         # 最終行の改行を全削除して空白行を1行追加
         py = py.rstrip() + "\n"
         return py
-
-
-# スクリプトを直接呼び出した時の処理
-if __name__ == "__main__":
-    print(parse_nb(path=sys.argv[1]))
