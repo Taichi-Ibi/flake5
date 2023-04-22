@@ -5,10 +5,6 @@ import sys
 from .parse_nb import parse_nb
 
 
-def main():
-    flake5(path=sys.argv[1])
-
-
 def flake5(path):
     py = parse_nb(path)
     with open(file := "__flake5__.py", mode="w") as f:
@@ -17,3 +13,7 @@ def flake5(path):
     grep = "findstr" if os == "Windows" else "grep"
     cmd = f"flake8 {file} | {grep} import && rm {file}"
     subprocess.call(cmd, shell=True)
+
+
+def main():
+    flake5(path=sys.argv[1])
