@@ -2,7 +2,7 @@ import platform
 import subprocess
 import sys
 
-from parse_nb import parse_nb
+from .parse_nb import parse_nb
 
 
 def flake5(path):
