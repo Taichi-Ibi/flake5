@@ -13,10 +13,14 @@ def parse_nb(path):
         py = ""
         for line in cells_code:
             # セルの最終行に改行を追加
-            line[-1] += "\n" * 2
-            # 行をテキストとして追加
-            for l in line:
-                py += l
+            if line is not None:
+                line[-1] += "\n" * 2
+                # 行をテキストとして追加
+                for l in line:
+                    py += l
+            else:
+                # 空のセルがあった時の対応
+                pass
         # 最終行の改行を全削除して空白行を1行追加
         py = py.rstrip() + "\n"
         return py

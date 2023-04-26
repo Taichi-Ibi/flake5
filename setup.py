@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flake5",
-    version="0.0.8",
+    version="0.0.9",
     author="t.ibi",
     author_email="t.ibi@estyle-inc.jp",
     description="search unnecessary imports in ipynb file",
