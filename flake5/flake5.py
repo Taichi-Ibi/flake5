@@ -14,8 +14,8 @@ def flake5(path):
     o_s = platform.system()
     grep = "findstr" if o_s == "Windows" else "grep"
     rm = "del" if o_s == "Windows" else "rm"
-    cmd = f"flake8 {file} | {grep} import && {rm} {file}"
-    subprocess.call(cmd, shell=True)
+    subprocess.call(f"flake8 {file} | {grep} import", shell=True)
+    subprocess.call(f"{rm} {file}", shell=True)
 
 
 def main():
