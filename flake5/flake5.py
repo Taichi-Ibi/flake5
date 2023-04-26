@@ -1,3 +1,4 @@
+import os
 import platform
 import subprocess
 import sys
@@ -6,6 +7,7 @@ from .parse_nb import parse_nb
 
 
 def flake5(path):
+    path = os.path.abspath(path)
     py = parse_nb(path)
     with open(file := "__flake5__.py", mode="w") as f:
         f.write(py)
